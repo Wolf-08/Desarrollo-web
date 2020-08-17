@@ -730,6 +730,7 @@ blockquote p::before {
 
 .info-testimonial {
     padding: 0;
+    background-color: transparent;
 }
 
 .info-testimonial img {
