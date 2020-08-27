@@ -680,7 +680,7 @@ ul.lista-precios>li {
 
 .mapa {
     height: 428px;
-    background-color: green;
+    /*background-color: green;*/
 }
 
 
@@ -912,7 +912,7 @@ h4 {
 
 .contenido-dia {
     padding: 20px;
-    /*display: none;*/
+    display: none;
 }
 
 @media (min-width: 768px) {
@@ -972,6 +972,24 @@ h4 {
 .resumeninput {
     display: block;
     margin: 10px auto;
+}
+
+#lista-productos {
+    background-color: #e1e1e1;
+    padding: 20px;
+    display: none;
+}
+
+#suma-total {
+    text-align: center;
+    color: #fe4918;
+    font-size: 2em;
+}
+
+#error {
+    clear: both;
+    padding: 20px;
+    display: none;
 }
 
 
