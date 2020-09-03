@@ -96,7 +96,7 @@
 
                 let totalPagar = (boletosDia * 30) + (boletos2Dias * 45) + (boletoCompleto * 50) + ((cantCamisas * 10) * .93) + (cantEtiquetas * 2);
                 console.log(totalPagar);
-                var listadoProductos = [];
+                var listadoProductos = []; //Arreglo de elementos del carrito que se compren 
                 if (boletosDia >= 1) {
                     listadoProductos.push(boletosDia + ' Pase(s) por dia');
                 }
@@ -115,7 +115,7 @@
                 }
 
                 lista_productos.style.display = "block"; //Para mostrarlo solo cuando este el resultado
-                lista_productos.innerHTML = '';
+                lista_productos.innerHTML = ''; //Para agregar el comentario 
                 for (let index = 0; index < listadoProductos.length; index++) {
                     lista_productos.innerHTML += listadoProductos[index] + '<br/>'
 
@@ -167,3 +167,31 @@
 
     }); // Dom Cont Loaded 
 })();
+
+// $(function() {
+//     //Programa de conferencias
+//     $('.programa-evento .info-curso:first').show();
+//     //$('div.ocultar').hide();
+//     $('.menu-programa a').on('click', function() {
+//         $('.ocultar').hide();
+//         var enlace = $(this).attr('href');
+//         $(enlace).faceIn(1000);
+//         return false;
+//     });
+// });
+
+$(function() {
+    //Programa conferencias
+    $('.programa-evento .info-curso:first').show();
+    $('.menu-programa a:first').addClass('activo');
+
+    //Funcion mostrar las diferentes opciones del menu 
+    $('.menu-programa a').on('click', function() {
+        $('.menu-programa a').removeClass('activo');
+        $(this).addClass('activo');
+        $('.ocultar').hide(); //Para ocultar la que no se le da click 
+        var enlace = $(this).attr('href'); //Al id que se esta referiendo
+        $(enlace).fadeIn(1000);
+        return false; //Para que no de el brinco al inicio de la pagina 
+    })
+});
