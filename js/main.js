@@ -193,5 +193,16 @@ $(function() {
         var enlace = $(this).attr('href'); //Al id que se esta referiendo
         $(enlace).fadeIn(1000);
         return false; //Para que no de el brinco al inicio de la pagina 
-    })
+    }); //Jquery sirve mucho para ahorrar codigo pero mas para plugins
+
+
+
+    // Animaciones para los numros
+    //No se usa first ni last porque no tienen numeracion
+    $('.resumen-evento li:nth-child(1) p').animateNumber({ number: 6 }, 1500); //1200 tiempo que se tarda
+    $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15 }, 1500); //1200 tiempo que se tarda
+    $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3 }, 2000); //1200 tiempo que se tarda
+    $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9 }, 1500); //1200 tiempo que se tarda
+
+
 });
