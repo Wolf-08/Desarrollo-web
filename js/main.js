@@ -181,6 +181,45 @@
 // });
 
 $(function() {
+    // menufijo
+    var windowHeight = $(window).height();
+    var barraAltura = $('.barra').innerHeight();
+
+
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if (scroll > windowHeight) {
+            $('.barra').addClass('fixed');
+
+        } else {
+            $('.barra').removeClass('fixed');
+
+        }
+    });
+    // menu-responsivo
+    $('.menu-movil').on('click', function() {
+        $('.navegacion-principal').slideToggle();
+    });
+
+    $(window).resize(function() {
+        var windowWidth = $(".barra").width();
+        if (windowWidth > 755) {
+            $(".navegacion-principal").css({ display: "block" });
+        } else {
+            $(".navegacion-principal").css({ display: "none" });
+        }
+    });
+    //leterring
+    $('.nombre-sitio').lettering('')
+
+
+
+
+
+
+
+
+
     //Programa conferencias
     $('.programa-evento .info-curso:first').show();
     $('.menu-programa a:first').addClass('activo');
@@ -203,6 +242,13 @@ $(function() {
     $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15 }, 1500); //1200 tiempo que se tarda
     $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3 }, 2000); //1200 tiempo que se tarda
     $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9 }, 1500); //1200 tiempo que se tarda
+    // Cuenta regresiva 
 
+    $('.cuenta-regresiva').countdown('2020/12/10 09:00:00', function(event) {
+        $('#dias').html(event.strftime('%D'));
+        $('#horas').html(event.strftime('%H'));
+        $('#minutos').html(event.strftime('%M'));
+        $('#segundos').html(event.strftime('%S'));
+    });
 
 });
