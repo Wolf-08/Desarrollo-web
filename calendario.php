@@ -44,18 +44,21 @@
           //se agrupan los elementos de la misma fecha
           $calendario [$fecha][]= $evento;
           ?>
-        <?php }
-        //imprime todos los eventos 
-        foreach($calendario as $dia => $lista_eventos){ ?>
+        <?php } ?>
+       
+       <?php foreach($calendario as $dia => $lista_eventos){
+          //imprime todos los eventos  ?>
           <h3>
           <i class="far fa-calendar-alt"></i>
-          <?php echo $dia; ?>
+          <?php 
+          setlocale(LC_TIME,'spanish.UTF-8');
+          echo strftime("%A, %d de %B del %Y", strtotime($dia)); ?>
         </h3>
-        <?php} ?>
+        <?php } //Poner espacios entre las llaves y los inicios de php ?> 
         
           <pre>
             <?php 
-            var_dump($calendario)
+            var_dump($calendario);
             ?>
           </pre>
 
@@ -64,6 +67,5 @@
         //Siempre cerrar la base de datos
         $conn->close();
         ?>
-
     </section>
-    <?php include_once 'includes/templates/footer.php';?>
+    <?php include_once 'includes/templates/footer.php'; ?>
