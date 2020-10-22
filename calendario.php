@@ -44,7 +44,7 @@
           //se agrupan los elementos de la misma fecha
           $calendario [$fecha][]= $evento;
           ?>
-        <?php } ?>
+        <?php } //  while para el fethassoc ?>
        
        <?php foreach($calendario as $dia => $lista_eventos){
           //imprime todos los eventos  ?>
@@ -54,14 +54,21 @@
           setlocale(LC_TIME,'spanish.UTF-8');
           echo strftime("%A, %d de %B del %Y", strtotime($dia)); ?>
         </h3>
-        <?php } //Poner espacios entre las llaves y los inicios de php ?> 
-        
-          <pre>
-            <?php 
-            var_dump($calendario);
-            ?>
-          </pre>
 
+        <?php foreach($lista_eventos as $evento){ ?>
+          <div class="dia">
+            <p class="titulo"> <?php echo $evento['titulo']; ?></p>
+            <p class="hora"> <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <?php echo $evento['fecha']. " ". $evento['hora'];?>
+            </p>
+              <p> <?php echo $evento['categoria']; ?></p>
+            <p>
+              <i class="fa fa-user" aria-hidden="true"></i>
+            <?php echo $evento['invitado']; ?>
+            </p>
+          </div>
+        <?php }  //for each eventos  ?>  
+        <?php } //for each dia //Poner espacios entre las llaves y los inicios de php ?>
        </div>
         <?php
         //Siempre cerrar la base de datos
