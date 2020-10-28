@@ -1,8 +1,6 @@
 <?php include_once 'includes/templates/header.php';?>
-    </section>
-    <section class="seccion contenedor">
-        <h2> Invitados </h2>
-        <?php
+  
+      <?php
         try{
           //Traemos el archivo que genera la conexion
           //a la base de datos
@@ -22,10 +20,20 @@
           <?php while ($invitados = $resultado->fetch_assoc()) { ?>
             <li>
                 <div class="invitado">
-                    <img src=" img/<?php echo $invitados['url_imagen']?>" alt="Inivitado">
+                  <a class="invitado-info" href="#invitado<?php echo $invitados['invitado_id'];?>">
+                    <img src=" img/<?php echo $invitados['url_imagen']?>" alt="Invitado">
                     <p><?php echo $invitados['nombre_invitado']. "" . $invitados['apellido_invitado'] ?></p>
+                  </a>
                 </div>
-            </li>     
+            </li>   
+            <div style="display:none;">
+              <div class="invitado-info" id="invitado<?php echo $invitados['invitado_id'];?>">
+                  <h2> <?php echo $invitados['nombre_invitado'] ." ". $invitados['apellido_invitado']; ?></h2>             
+                  <img src=" img/<?php echo $invitados['url_imagen']?>" alt="Invitado">
+                  <p><?php echo $invitados['descripcion']; ?> </p>             
+              </div>
+            </div>
+            
           <?php } ?>
           </ul>
     </section>
@@ -33,5 +41,4 @@
         //Siempre cerrar la base de datos
         $conn->close();
         ?>
-    </section>
     <?php include_once 'includes/templates/footer.php'; ?>

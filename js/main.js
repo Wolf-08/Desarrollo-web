@@ -1,5 +1,6 @@
 (function() {
     'use strict';
+
     //Regalo 
     var regalo = document.getElementById('regalo');
     document.addEventListener('DOMContentLoaded', function() {
@@ -250,5 +251,11 @@ $(function() {
         $('#minutos').html(event.strftime('%M'));
         $('#segundos').html(event.strftime('%S'));
     });
+
+    //*************Colorbox*************************/
+    //Se tiene que mandar a llamar para que funcione de manera correta aqui 
+
+    $('.invitado-info').colorbox({ inline: true, width: "50%" });
+
 
 });

@@ -33,6 +33,7 @@
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/jquery.countdown.min.js"></script>
     <script src="js/jquery.lettering.js"></script>
+    <script src="js/jquery.colorbox-min.js"></script>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
     <script src="js/main.js"></script>
 
