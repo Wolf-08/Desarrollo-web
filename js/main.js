@@ -213,13 +213,10 @@ $(function() {
     //leterring
     $('.nombre-sitio').lettering('')
 
-
-
-
-
-
-
-
+    //Agregar clase a Menú
+    $('body.conferencia .navegacion-principal a:contains("conferencia")').addClass('activo');
+    $('body.calendario .navegacion-principal a:contains("calendario")').addClass('activo');
+    $('body.invitados .navegacion-principal a:contains("invitado")').addClass('activo');
 
     //Programa conferencias
     $('.programa-evento .info-curso:first').show();

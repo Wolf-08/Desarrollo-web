@@ -21,14 +21,25 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" href="css/normalize.css">
+    
+    <?php 
+
+    $archivo = basename($_SERVER['PHP_SELF']);
+    $pagina= str_replace(".php","","$archivo");
+    if($pagina =='index' ||  $pagina == 'invitados'){
+    echo '<link rel="stylesheet" href="css/colorbox.css">';
+    }else if ($pagina == 'conferencia'){
+    echo '<link rel="stylesheet" href="css/lightbox.css">';
+    }
+
+    ?>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/colorbox.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
 
     <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body class="<?php echo $pagina; ?>">
 
     <header class="site-header">
         <div class="hero">

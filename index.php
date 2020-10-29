@@ -79,50 +79,9 @@
         </div>
     </section>
     <!--programa-->
-    <section class="invitados contenedor">
-        <h2>Nuestros invitados</h2>
-        <ul class="lista-invitados clearfix">
-            <li>
-                <div class="invitado">
-                    <img src="img/invitado1.jpg" alt="Inivitado1">
-                    <p>Rafael Bautista</p>
-                </div>
-            </li>
-            <li>
-                <div class="invitado">
-                    <img src="img/invitado2.jpg" alt="Inivitado1">
-                    <p>Byun Baekhyun
-
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="invitado">
-                    <img src="img/invitado3.jpg" alt="Inivitado1">
-                    <p>Raul Sanchez</p>
-                </div>
-            </li>
-            <li>
-                <div class="invitado">
-                    <img src="img/invitado4.jpg" alt="Inivitado1">
-                    <p>Susana Rivera</p>
-                </div>
-            </li>
-            <li>
-                <div class="invitado">
-                    <img src="img/invitado5.jpg" alt="Inivitado1">
-                    <p>Harold Sanchez</p>
-                </div>
-            </li>
-            <li>
-                <div class="invitado">
-                    <img src="img/invitado6.jpg" alt="Inivitado1">
-                    <p>Claudia Tiedeman</p>
-                </div>
-            </li>
-
-        </ul>
-    </section>
+    <!-- Invitados -->
+    <?php include_once 'includes/templates/invitados.php';?>
+    <!-- Invitados -->
     <div class="contador parallax">
         <div class="contenedor">
             <ul class="resumen-evento clearfix">
