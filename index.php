@@ -21,10 +21,33 @@
             <div class="contenedor">
                 <div class="programa-evento">
                     <h2>Programa del evento</h2>
-                    <nav class="menu-programa">
-                        <a href="#talleres"> <i class="fas fa-code"></i>Talleres</a>
-                        <a href="#conferencias"> <i class="far fa-comment-alt"></i>Conferencias</a>
-                        <a href="#seminarios"> <i class="fas fa-university"></i>Seminarios</a>
+    <?php
+        try{
+          //Traemos el archivo que genera la conexion
+          //a la base de datos
+          require_once('includes/funciones/conexion.php');
+          $sql =" SELECT * FROM `categoria_evento` ";
+          //todo el código sql va en esta variable
+          $resultado = $conn->query($sql);
+          //En resultado se guarda el resultado del query 
+          //que se genera con la base 
+        }catch(Exception $e){
+          //Muestra el error en caso de que falle  
+          //la base de datos
+          echo $e->getMessage();
+
+        }
+
+    ?>
+                     <nav class="menu-programa">
+                     <?php while($cat = $resultado->fetch_array(MYSQLI_ASSOC)){ ?>
+                     <?php $categoria= $cat['cat_evento']; ?>
+                     
+                        <a href="#<?php echo strtolower($caegoria); ?>"> 
+                        <i class="fa <?php echo $cat['icono']?>" aria-hidden="true"></i><?php echo $caegoria ?> </a>
+                        
+                    
+                    <?php } ?>
                     </nav>
                     <div id="talleres" class="info-curso ocultar clearfix">
                         <div class="detalle-evento">
